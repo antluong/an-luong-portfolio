@@ -14,6 +14,7 @@
     --accent-1: #6d7847;
     --accent-2: #a8ae7a;
     --accent-3: #e7f1df;
+    --underline: rgb(226, 149, 7);
     --dark: #010201;
 }
 
@@ -68,18 +69,18 @@ header {
     background-color: var(--bg-color-1);
 }
 
-header h1 { 
+header h1 { font-size: 5rem;
 text-shadow: 1.5px 1.5px 4px white;
 }
 
    nav a {text-decoration: none;
-color: var(--accent-1);
+color: var(--accent-2);
 /* margin: 0 1rem;
 transition: all .5s ease; */
 }
 
 nav a:hover {
-    color: var(--accent-2);
+    color: var(--underline);
 }
 .navbar {
     display: flex;
@@ -131,7 +132,20 @@ main {margin: 2rem;} }
     margin: 5rem auto;
 }
 
-.about-content, .portfolio-content h2, .contact-content h2 {margin: 2rem 2;}
+.about-content h2, .portfolio-content h2, .contact-content h2 {
+    margin: 2rem 0;
+    position: relative;
+    width: fit-content;
+}
+.about-content h2::after, .portfolio-content h2::after, .contact-content h2::after {
+   content: "";
+    display: block;
+    width: 50%;
+    height: 3px;
+    background-color: var(--underline);
+    margin-top: -10px;
+}
+
 
 .portfolio-item { padding: 1rem;
     background-color: var(--accent-3);
